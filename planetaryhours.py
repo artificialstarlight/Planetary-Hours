@@ -1,13 +1,10 @@
-#TODO putting this in my code so i will remember it..
-#the math hw is to comment on 3 other people's slides
 
-#import some modules
 import datetime
 import copy
 import sys
 from astral import Astral
 
-#fucntions
+#fucntions below
 
 #converts minutes to hours and minutes
 def mins2hoursandmins(time):
@@ -26,7 +23,7 @@ def mins2hoursandmins(time):
     minutes = str(minutes)
     planetaryhour = hours + ":" + minutes
     return planetaryhour
-#this..helps calculate the ending time of the hour
+#calculates the ending time of the hour
 def getminutes4subtracting(start_time):
     minutes = start_time[-2:]
     minutes = int(minutes)
@@ -38,7 +35,7 @@ def getminutes4subtracting(start_time):
         minutes = str(minutes)
     return minutes
 
-#just gets the hour and returns it
+#gets the hour and returns it
 def gethours(time):
     if time/60 ==1:
         hours = time/60
@@ -65,14 +62,14 @@ print "Enter the day (number)"
 day = input(": ")
 
 sun = city.sun(date=datetime.date(year, month, day), local = True)
-#putting this from...import in the middle of my code causes me pain
-#but if i put it at the beginning it makes other things not work
+
+
 from datetime import datetime
 sunrise_datetime_object = sun['sunrise']
 sunset_datetime_object = sun['sunset']
 
 #change datetime.datetime object to string
-#which is the reason for that annoying from...import
+
 sunrisestring = sunrise_datetime_object.strftime('%c')
 sunsetstring = sunset_datetime_object.strftime('%c')
 dayoftheweek = sunrisestring[:3]
